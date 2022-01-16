@@ -8,6 +8,7 @@
   justify-content: space-around;
   border-style: dotted;
   padding: 25px 25px 25px 25px;
+  margin: 0;
 }
 
 .time_tag {

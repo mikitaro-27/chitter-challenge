@@ -1,16 +1,34 @@
 <head>
   <title>Chitter</title>
   <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  
+  Chitter!<br>
+  
+  <% if flash[:notice]%> 
+      <div class='flash-object'><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if flash[:notice_wrong_details]%> 
+      <div class='flash-object'><%= flash[:notice_wrong_details]%></div>
+  <% end %>
+  
+  <form action='/register' method='get'>
+    <input class='button' type='submit' value='Register'>
+  </form>
+
+  <form action='/sign_in' method='post'>
+    <input name='username' type='text' placeholder='username'>
+    <input name='password' type='text' placeholder='password'>
+    <input type='submit' value='Sign in'>
+  </form>
+
 </head>
 
 <body>
-  Chitter!<br>
-  <div class='flash-object'><%= if flash[:notice] then flash[:notice] end %></div>
   <form class='text-box' action='/add' method='post'>
     <input name='content' type='text' placeholder='What are you peeping?'>
     <input type='submit' value='Peep'>
-  <form>
-
+  </form>  
   <dl>
     <% @peeps.each do |peep| %>
       <dd class='peep' id='peep-<%= peep.id %>'> <%= peep.content %> </dd>

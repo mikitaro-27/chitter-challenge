@@ -1,0 +1,16 @@
+<head>
+  <title>Register Peeper</title>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+
+  Register to peep.
+</head> 
+
+<body>
+  <form action='/register' method='post'>
+    <input name='user-name' class='text-box' type='text' placeholder='Your name'><br>
+    <input name='user-email' class='text-box' type='email' placeholder='Your email address'><br>
+    <input name='user-username' class='text-box' type='text' placeholder='Your username'><br>
+    <input name='user-password' class='text-box' type='text' placeholder='Your password'><br>
+    <input type='submit' value='Register'>
+  </form> 
+</body>

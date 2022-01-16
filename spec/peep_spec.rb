@@ -8,7 +8,7 @@ describe Peep do
   describe '.add' do
     it 'add a Peep to the database and returns an instance of Peep' do
       peep = Peep.add(content: 'My first peep!')
-      persisted_data = persisted_data(peep.id)
+      persisted_data = persisted_data(peep.id, 'peeps')
 
       expect(peep).to be_a Peep
       expect(peep.id).to eq persisted_data[0]['id']
@@ -36,7 +36,7 @@ describe Peep do
   describe '#created_at?' do
     it 'returns time at which peep was created' do
       peep = Peep.add(content: 'First Peep!')
-      persisted_data = persisted_data(peep.id)
+      persisted_data = persisted_data(peep.id, 'peeps')
       expect(peep.created_at?).to eq Time.parse(persisted_data[0]['created_at'])
     end
   end
